@@ -10,7 +10,7 @@ export const baseFetch = async (
         ...options,
         credentials: "include", // QUAN TRỌNG để gửi cookie
         headers: {
-            "Content-Type": "application/json",
+            // "Content-Type": "application/json",
             ...(options.headers || {}),
         },
     }); 

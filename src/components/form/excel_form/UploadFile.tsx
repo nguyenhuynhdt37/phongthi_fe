@@ -5,10 +5,10 @@ import { useDropzone } from "react-dropzone";
 import { RiFileExcel2Fill } from "react-icons/ri";
 
 
-interface IUploadFile  {
-  onUploadFile: (files: File[]) => void;
+interface IUploadFile {
+  onUploadFiles: (files: File[]) => void;
 }
-const UploadFile = ({onUploadFile}: IUploadFile) => {
+const UploadFile = ({ onUploadFiles }: IUploadFile) => {
   const [files, setFiles] = useState<File[]>([]);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -121,7 +121,7 @@ const UploadFile = ({onUploadFile}: IUploadFile) => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                onUploadFile(files);
+                onUploadFiles(files);
               }}
               className="px-4 py-2 bg-success-500 text-white rounded hover:bg-success-600 transition"
               type="button"
